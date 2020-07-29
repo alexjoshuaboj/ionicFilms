@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ this.result.Title }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item slot="start" class=" Title">
+      <ion-img class="img" [src]="this.result.Poster"></ion-img>
+    </ion-item>
+  </ion-list>
+  <p>Title: {{ this.result.Title }}</p>
+  <p>Year: {{ this.result.Year }}</p>
+  <p>Released: {{ this.result.Released | date }}</p>
+  <p>Runtime: {{ this.result.Runtime }}</p>
+  <p>Genre: {{ this.result.Genre }}</p>
+  <p>Director: {{ this.result.Director }}</p>
+</ion-content>

@@ -5,6 +5,12 @@
     </ion-buttons>
     <ion-title>{{ folder }}</ion-title>
   </ion-toolbar>
+  <form [formGroup]="form">
+    <ion-item>
+      <ion-input placeholder="search" type="text" formControlName="search"></ion-input>
+      <ion-button class="btn btn-primary" (click)="films()">Search</ion-button>
+    </ion-item>
+  </form>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -13,9 +19,12 @@
       <ion-title size="large">{{ folder }}</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list>
+    <ion-item class=" Title" (click)="openModalWithData()">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="this.resultApi.Poster"></ion-img>
+      </ion-thumbnail>
+      <ion-label>{{this.resultApi.Title}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
